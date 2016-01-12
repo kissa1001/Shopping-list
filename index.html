@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<link rel="shortcut icon" href="img/shortcut-icon.png"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -16,13 +17,17 @@
 	</div>
 	<div id="main">
 		<form name="shopping-cart">
-			<input type="text" class ="textarea" placeholder="Type the name of the item" required data-error="NEW ERROR MESSAGE">
+			<input type="text" name="textarea" class ="textarea" placeholder="Type the name of the item" required data-error="NEW ERROR MESSAGE">
 		</form><div id="button">Add!</div>
 		<br/>
 		<div class="list"></div>
 	</div>
 	<div id="footer">
+		<p>Click <strong>Add</strong> to add items to the list.</p>
+		<p><strong>Click</strong> on the item if you want to remove.</p>
 		<p>Thank you for using my Shoplist <i class="fa fa-heart"></i></p>
 	</div>
+
+	<script src="js/jquery.js"></script>
 </body>
 </html>
