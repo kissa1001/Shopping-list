@@ -1,0 +1,121 @@
+body{
+	font-family: 'Indie Flower';
+	background: url('../img/background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	border:5px dashed #fff;
+	color:#fff;
+	height:100vh;
+}
+.text-center{
+	text-align:center;
+	font-size:5em;
+	font-family:'Lobster';
+}
+#main{
+	margin:0 auto;
+	max-width:40em;
+}
+form{
+	display:inline-block;
+}
+.textarea{
+	width:20em;
+	height:2em;
+	font-family: 'Indie Flower';
+	font-size:1.5em;
+	border:none;
+	background:#2E2E2E;
+	color:#fff;
+}
+#button{
+	margin-left:2em;
+	display:inline-block;
+    border:1px solid #fff;
+    font-size:1.5em;
+    text-align:center;
+    padding:0.2em 1em;
+    cursor:pointer;
+}
+#button:hover{
+	background:#fff;
+	color:#2E2E2E;
+}
+#footer{
+	text-align:center;
+}
+#footer i {
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -webkit-animation-duration: 1.5s;
+  -moz-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+}
+
+@-webkit-keyframes pulse {    
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@-moz-keyframes pulse {    
+  0% {
+    -moz-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  100% {
+    -moz-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .text-center{
+    	font-size:3em;
+    }
+    .textarea{
+    	width:12em;
+    	height:2em;
+    	font-size:1em;
+    }
+    #button{
+    	font-size:1em;
+    }
+}
+@media only screen (max-width: 768px) {
+    .text-center{
+    	font-size:7em;
+    }
+    .textarea{
+    	width:13em;
+    	height:2em;
+    	font-size:2em;
+    }
+    #button{
+    	font-size:2em;
+    }
+    #footer p{
+    	font-size:2em;
+    }
+}
