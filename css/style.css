@@ -3,9 +3,12 @@ body{
 	background: url('../img/background.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	border:5px dashed #fff;
+  border:5px dashed #fff;
 	color:#fff;
-	height:100vh;
+	max-height:100vh;
+}
+p{
+  font-size: 1.5em;
 }
 .text-center{
 	text-align:center;
@@ -15,6 +18,9 @@ body{
 #main{
 	margin:0 auto;
 	max-width:40em;
+}
+.fa-shopping-cart{
+  cursor:pointer;
 }
 form{
 	display:inline-block;
@@ -45,6 +51,17 @@ form{
 	font-size:1.5em;
 	padding:1em;
 	cursor:pointer;
+  max-width: 18em;
+}
+.item:hover{
+  background:#2E2E2E;
+}
+.item i{
+  float:right;
+  margin-right:1em;
+}
+.item i:hover{
+  color:#000;
 }
 #footer{
 	text-align:center;
