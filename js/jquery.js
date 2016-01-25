@@ -30,7 +30,3 @@ $(function(){
     };
 
 });
-    $(document).on('click','.fa-shopping-cart',function(){
-        location.reload();
-    });
-});
