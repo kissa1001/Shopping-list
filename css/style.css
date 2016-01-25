@@ -3,9 +3,12 @@ body{
 	background: url('../img/background.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	border:5px dashed #fff;
+  border:5px dashed #fff;
 	color:#fff;
-	height:100vh;
+	max-height:100vh;
+}
+p{
+  font-size: 1.5em;
 }
 .text-center{
 	text-align:center;
@@ -16,10 +19,13 @@ body{
 	margin:0 auto;
 	max-width:40em;
 }
+.fa-shopping-cart{
+  cursor:pointer;
+}
 form{
 	display:inline-block;
 }
-.textarea{
+#add{
 	width:20em;
 	height:2em;
 	font-family: 'Indie Flower';
@@ -28,7 +34,7 @@ form{
 	background:#2E2E2E;
 	color:#fff;
 }
-#button{
+#addItem{
 	margin-left:2em;
 	display:inline-block;
     border:1px solid #fff;
@@ -37,7 +43,7 @@ form{
     padding:0.2em 1em;
     cursor:pointer;
 }
-#button:hover{
+#addItem:hover{
 	background:#fff;
 	color:#2E2E2E;
 }
@@ -45,6 +51,20 @@ form{
 	font-size:1.5em;
 	padding:1em;
 	cursor:pointer;
+  max-width: 18em;
+}
+.list>li{
+  list-style: none;
+}
+.list>li:hover{
+  background:#2E2E2E;
+}
+.list i{
+  float:right;
+  margin-right:1em;
+}
+.list i:hover{
+  color:#000;
 }
 #footer{
 	text-align:center;
@@ -99,7 +119,7 @@ form{
     .text-center{
     	font-size:3em;
     }
-    .textarea{
+    #add{
     	width:12em;
     	height:2em;
     	font-size:1em;
@@ -112,7 +132,7 @@ form{
     .text-center{
     	font-size:7em;
     }
-    .textarea{
+    #add{
     	width:13em;
     	height:2em;
     	font-size:2em;
