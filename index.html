@@ -16,11 +16,11 @@
 		<h1 class="text-center">Shopping List <i class="fa fa-shopping-cart"></i></h1>
 	</div>
 	<div id="main">
-		<form name="shopping-cart">
-			<input type="text" name="textarea" class ="textarea" placeholder="Type the name of the item" required data-error="NEW ERROR MESSAGE">
-		</form><div id="button">Add!</div>
+		<form id="shopping-cart">
+			<input type="text" name="textarea" id ="add" placeholder="Type the name of the item" required data-error="NEW ERROR MESSAGE">
+		</form><div id="addItem">Add!</div>
 		<br/>
-		<div class="list"></div>
+			<ul class="list"></ul>
 	</div>
 	<div id="footer">
 		<p>To clear your list, <strong>Click</strong> on shopping cart icon!</p>

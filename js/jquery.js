@@ -1,28 +1,38 @@
 
-$(document).ready(function(){
+$(function(){
 
-    $('#button').click(function(){
-    	var Add=$('input[name=textarea]').val();
-        $('input[name=textarea]').val(' '); 
-    	$('.list').append('<div class="item">'+ '<i class="fa fa-check"></i>' + Add +'<i class="fa fa-times"></i>'+'</div>');
+    $('#shopping-cart').submit(function(event){
+        event.preventDefault();
+        addItem();
     });
 
-    $('input[name=textarea]').keydown(function(e) {
-       if(e.which == 13) {
-        $('#button').click();
-        return false;
-       }
+    $('#addItem').click(function(){  
+        addItem();
     });
 
-    $(document).on('click','.fa-times',function(){
-        $(this).parent().fadeOut(500);
-    });
+    var addItem = function(){
+        var item = $('#add').val();
+        $('#add').val(' ');
 
-    $(document).on('click','.fa-check', function(){
-        $(this).parent().css("text-decoration","line-through");
-    }); 
+        $('ul.list').append('<li><i class="fa fa-check"></i>' + item + '<i class="fa fa-times"></i></li>');
 
-    $(document).on('click','.fa-shopping-cart',function(){
-        location.reload();
-    });
+        $('.fa-times').on('click',function(){
+            $(this).parent().fadeOut(500);
+        });
+
+        $('.fa-check').on('click', function(){
+            $(this).parent().css("text-decoration","line-through");
+        }); 
+
+        $('.fa-shopping-cart').on('click',function(){
+            location.reload();
+        });
+    };
+
 });
+    
+
+    
+
+
+  
