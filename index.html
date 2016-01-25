@@ -16,16 +16,16 @@
 		<h1 class="text-center">Shopping List <i class="fa fa-shopping-cart"></i></h1>
 	</div>
 	<div id="main">
-		<form name="shopping-cart">
-			<input type="text" name="textarea" class ="textarea" placeholder="Type the name of the item" required data-error="NEW ERROR MESSAGE">
-		</form><div id="button">Add!</div>
+		<form id="shopping-cart">
+			<input type="text" name="textarea" id ="add" placeholder="Type the name of the item" required data-error="NEW ERROR MESSAGE">
+		</form>
+		<div id="addItem">Add!</div>
 		<br/>
-		<div class="list"></div>
+		<ul class="list"></ul>
 	</div>
 	<div id="footer">
-		<p>Click <strong>Add</strong> to add items to the list.</p>
-		<p><strong>Click</strong> on the item if you want to remove.</p>
-		<p>Thank you for using my Shoplist <i class="fa fa-heart"></i></p>
+		<p>To clear your list, <strong>Click</strong> on shopping cart icon!</p>
+		<p>Thank you for using my Shopping list <i class="fa fa-heart"></i></p>
 	</div>
 
 	<script src="js/jquery.js"></script>
