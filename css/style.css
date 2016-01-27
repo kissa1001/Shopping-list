@@ -37,13 +37,13 @@ form{
 #addItem{
 	margin-left:2em;
 	display:inline-block;
-    border:1px solid #fff;
-    background:none;
-    color:#fff;
-    font-size:1.5em;
-    text-align:center;
-    padding:0.2em 1em;
-    cursor:pointer;
+  border:1px solid #fff;
+  background:none;
+  color:#fff;
+  font-size:1.5em;
+  text-align:center;
+  padding:0.2em 1em;
+  cursor:pointer;
 }
 #addItem:hover{
 	background:#fff;
