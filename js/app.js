@@ -40,3 +40,7 @@ ShoppingList.prototype.formSubmitHandler = function(event) {
     this.button.val('');
     this.addItem(item);
 };
+$(function(){
+    var shoppingList = new ShoppingList('#shopping-cart', '#add', [], '.list');
+    shoppingList.start();
+});
