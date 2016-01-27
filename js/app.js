@@ -2,7 +2,6 @@ var Item = function(description){
     this.description = description;
 };
 
-<<<<<<< HEAD
 Item.prototype.show = function() {
     return '<li><i class="fa fa-check"></i>' + this.description + '<i class="fa fa-times"></i></li>';
 };
@@ -46,39 +45,3 @@ $(function(){
     var shoppingList = new ShoppingList('#shopping-cart', '#add', [], '.list');
     shoppingList.start();
 });
-
-
-  
-=======
-$(function(){
-
-    $('#shopping-cart').submit(function(event){
-        event.preventDefault();
-        addItem();
-    });
-
-    $('#addItem').click(function(){  
-        addItem();
-    });
-
-    var addItem = function(){
-        var item = $('#add').val();
-        $('#add').val(' ');
-
-        $('ul.list').append('<li><i class="fa fa-check"></i>' + item + '<i class="fa fa-times"></i></li>');
-
-        $('.fa-times').on('click',function(){
-            $(this).parent().fadeOut(500);
-        });
-
-        $('.fa-check').on('click', function(){
-            $(this).parent().css("text-decoration","line-through");
-        }); 
-
-        $('.fa-shopping-cart').on('click',function(){
-            location.reload();
-        });
-    };
-
-});
->>>>>>> 7fe9f0839ef08de7600345eaf7bb381565786838
