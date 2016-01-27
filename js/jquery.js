@@ -24,8 +24,8 @@ ShoppingList.prototype.start = function(){
     this.list.on('click', '.fa-check', function(){
         $(this).parent().css("text-decoration","line-through");
     });
-    $('.fa-shopping-cart').on('click', {ShoppingList: this}, function(){
-        ShoppingList.list.empty();
+    $('.fa-shopping-cart').on('click', {shoppingList: this}, function(){
+        ShoppingList['items'].empty();
     });
 };
 
