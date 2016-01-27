@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-
-$(function(){
-
-    $('#shopping-cart').submit(function(event){
-        event.preventDefault();
-        addItem();
-    });
-
-    $('#addItem').click(function(){  
-        addItem();
-    });
-
-    var addItem = function(){
-        var item = $('#add').val();
-        $('#add').val(' ');
-
-        $('ul.list').append('<li><i class="fa fa-check"></i>' + item + '<i class="fa fa-times"></i></li>');
-
-        $('.fa-times').on('click',function(){
-            $(this).parent().fadeOut(500);
-        });
-
-        $('.fa-check').on('click', function(){
-            $(this).parent().css("text-decoration","line-through");
-        }); 
-
-        $('.fa-shopping-cart').on('click',function(){
-            location.reload();
-        });
-    };
-
-=======
 var Item = function(description){
     this.description = description;
 };
@@ -50,7 +17,7 @@ ShoppingList.prototype.start = function(){
     this.form.submit(this.formSubmitHandler.bind(this));
     
     this.list.on('click', '.fa-times', {shoppingList: this}, function(){
-        //shoppingList.items
+        
         $(this).parent().fadeOut(500);
     });
     
@@ -73,9 +40,3 @@ ShoppingList.prototype.formSubmitHandler = function(event) {
     this.button.val('');
     this.addItem(item);
 };
-
-$(function(){
-    var shoppingList = new ShoppingList('#shopping-cart', '#add', [], '.list');
-    shoppingList.start();
->>>>>>> refs/remotes/origin/master
-});
