@@ -1,32 +1,38 @@
 
 $(document).ready(function(){
 
-    var countVegie= 0;
-    var countFruit= 0;
-    
+
+function itemCount (value){
+    var items = $('.item').filter(function(i,e){
+        var item = $(e).text().trim();
+        if(item == value){
+            return true;
+        }
+        else{
+            return false;
+        }
+    });
+    return items.length;
+};
+
+function updateCart (){
+    if(itemCount('vegie') > itemCount('fruit')){
+        $('.fa-shopping-cart').css('color','green');
+    }
+    else if (itemCount('vegie') < itemCount('fruit')){
+        $('.fa-shopping-cart').css('color','red');
+    }
+    else{
+        $('.fa-shopping-cart').css('color','orange');
+    }
+};
+
+
     $('#button').click(function(){
     	var Add=$('#addItem').val();
         $('#addItem').val(' '); 
     	$('.list').append('<div class="item">'+ '<i class="fa fa-check"></i>' + Add +'<i class="fa fa-times"></i>'+'</div>');
-
-            
-        if(Add.match('fruit')) {
-            countFruit ++ ;
-        }
-        else if(Add.match('vegie')){
-            countVegie ++;
-        }
-
-        if(countVegie > countFruit){
-            $('.fa-shopping-cart').css('color','green');
-        }
-        else if(countVegie < countFruit){
-            $('.fa-shopping-cart').css('color','red');
-        }
-        else if(countVegie = countFruit) {
-            $('.fa-shopping-cart').css('color','orange');
-        }
-        
+        updateCart();
     });
 
     $('#addItem').keydown(function(e) {
@@ -37,7 +43,10 @@ $(document).ready(function(){
     });
 
     $(document).on('click','.fa-times',function(){
-        $(this).parent().fadeOut(500);
+        $(this).parent().fadeOut(500, function(){
+            $(this).remove();
+            updateCart();
+        });
     });
 
     $(document).on('click','.fa-check', function(){
