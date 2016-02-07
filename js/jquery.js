@@ -57,7 +57,7 @@ shoppingListItems.prototype.addItems = function(item){
     var item = new Item($('#addItem').val());
     $('#addItem').val(' ');
     this.list.append(item);
-    this.items.push(item);
+    this.items.push({item: item, quantity: 1});
 
         $(document).on('click','.fa-times',function(){
         $(this).parent().fadeOut(500, function(){
