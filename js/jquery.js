@@ -29,16 +29,6 @@ Item.prototype.updateCart = function  (){
     }
 };
 
-Item.prototype.totalBoughtItems = function () {
-    total = 0;
-    $.each(data, function(index, element) {
-        if (item.bought) {
-            total += item.quantity;
-        }
-    });
-    return total;
-}
-
 var shoppingListItems = function(items,form,list){
     this.form = $(form);
     this.list = $(list);
@@ -50,7 +40,17 @@ shoppingListItems.prototype.updateList = function  (){
         $.each(this.items, function(index, description){
          var template = Handlebars.compile($('#item-template').html());
          this.list.append(template({description:description,index:index}));
-    })
+    });
+};
+
+shoppingListItems.prototype.totalBoughtItems = function () {
+    total = 0;
+    $.each(this.data, function(index, element) {
+        if (item.bought) {
+            total += item.quantity;
+        }
+    });
+    return total;
 };
 
 shoppingListItems.prototype.addItems = function(item){
@@ -59,7 +59,7 @@ shoppingListItems.prototype.addItems = function(item){
     this.list.append(item);
     this.items.push({item: item, quantity: 1});
 
-        $(document).on('click','.fa-times',function(){
+        this.list.on('click','.fa-times',function(){
         $(this).parent().fadeOut(500, function(){
             var index = $(this).attr('id').substr(5);
             shoppingListItems.splice(index,1);
@@ -68,13 +68,13 @@ shoppingListItems.prototype.addItems = function(item){
         });
     });
 
-    $(document).on('click','.fa-check', function(){
+    this.list.on('click','.fa-check', function(){
         $(this).parent().css("text-decoration","line-through");
          totalBoughtItems();
         updateList();
     }); 
 
-    $(document).on('click','.fa-shopping-cart',function(){
+    this.list.on('click','.fa-shopping-cart',function(){
         shoppingListItems = [];
         updateList();
         updateCart();
@@ -84,7 +84,7 @@ shoppingListItems.prototype.addItems = function(item){
     updateCart();
 
 
-}
+};
     
 shoppingListItems.prototype.show = function(event){
     this.form.submit(this.addItems.bind(this));
